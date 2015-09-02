@@ -2,8 +2,11 @@
 public class BridgeDemo {
 
 	public static void main(String[] args) {
-		Circle redCircle   = new Circle(0, 0, 20, new RedCircle());
-		Circle greenCircle = new Circle(1, 1, 2,  new GreenCircle());
+		TestFrame thisFrame = TestFrame.getInstance();
+		thisFrame.init();
+		
+		Circle redCircle   = new Circle(60, 20, 60, new RedCircle());
+		Circle greenCircle = new Circle(60, 100, 60,  new GreenCircle());
 
 		redCircle.draw();
 		greenCircle.draw();

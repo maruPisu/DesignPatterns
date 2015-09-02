@@ -3,16 +3,33 @@ public class FactoryDemo {
 
 	public static void main(String[] args) {
 
-		String Shapes[] = {"CIRCLE", "RECTANGLE", "SQUARE"};
-
+		int nShapes = 10;
+		int count = 0;
+		
+		Shape [] shapes = new Shape[nShapes];
+		
 		ShapeFactory shapeFactory = new ShapeFactory();
 		
-		for(int i = 0; i < 3; i++) {
-			//get an object of Shapes[i] and call its draw method.
-			Shape shape1 = shapeFactory.getShape(Shapes[i]);
+		TestFrame frame = TestFrame.getInstance();
+		frame.init();
 
-			//call draw method of Shape
-			shape1.draw();
+		shapes[count] = shapeFactory.getShape("CIRCLE");
+		shapes[count++].insertParam(30,30,30,255,0,0);
+
+		shapes[count] = shapeFactory.getShape("RECTANGLE");
+		shapes[count++].insertParam(120,30,30,50,0,0,255);
+
+		shapes[count] = shapeFactory.getShape("RECTANGLE");
+		shapes[count++].insertParam(180,30,30,50,0,255,255);
+
+		shapes[count] = shapeFactory.getShape("SQUARE");
+		shapes[count++].insertParam(70,30,30,0,255,0);
+		
+		shapes[count] = shapeFactory.getShape("SQUARE");
+		shapes[count++].insertParam(30,70,30,255,255,0);
+		
+		for(int i = 0 ; i < count; i++){
+			shapes[i].draw();
 		}
 	}
 }
