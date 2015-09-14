@@ -22,7 +22,6 @@ public class CompositeElement implements Equipment{
 		for(Equipment e : _components){
 			int part = e.Power();
 			sum += part;
-			System.out.println("power of " + e.get_name() + " : " + part);
 		}
 		
 		return sum; 
@@ -35,7 +34,6 @@ public class CompositeElement implements Equipment{
 		for(Equipment e : _components){
 			int part = e.NetPrice();
 			sum += part;
-			System.out.println("price of " + e.get_name() + " : " + part);
 		}
 		
 		return sum; 

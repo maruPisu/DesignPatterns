@@ -7,7 +7,7 @@ public class Main {
 		cabinet.Add(new FloppyDisk("Floppy disk drive"));
 		cabinet.Add(new HardDrive("Hard disk drive"));
 		
-		CompositeElement motherBoard = new CompositeElement("Mother Board");
+		MotherBoard motherBoard = new MotherBoard("Mother Board");
 		motherBoard.Add(new RAMModule("4GB RAM module"));
 		motherBoard.Add(new RAMModule("4GB RAM module"));
 		motherBoard.Add(new Processor("2.33Ghz I7 processor"));
@@ -16,7 +16,7 @@ public class Main {
 
 		
 		int netprice = cabinet.NetPrice();
-		System.out.println("Total price : " + netprice + "\n --- \n");
+		System.out.println("Total price : " + netprice + "\n ---");
 		
 		int power = cabinet.Power();
 		System.out.println("Total power consuption : " + power + "\n --- \n");
